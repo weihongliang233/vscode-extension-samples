@@ -6,14 +6,15 @@
 	"enableProposedApi": true,
 	"publisher": "vscode-samples",
 	"engines": {
-		"vscode": "^1.44.0"
+		"vscode": "^1.46.0"
 	},
 	"categories": [
 		"Other"
 	],
 	"activationEvents": [
 		"onCustomEditor:catCustoms.catScratch",
-		"onCustomEditor:catCustoms.pawDraw"
+		"onCustomEditor:catCustoms.pawDraw",
+		"onCommand:catCustoms.pawDraw.new"
 	],
 	"repository": {
 		"type": "git",
@@ -40,6 +41,13 @@
 					}
 				]
 			}
+		],
+		"commands": [
+			{
+				"command": "catCustoms.pawDraw.new",
+				"title": "Create new Paw Draw Document",
+				"category": "Paw Draw"
+			}
 		]
 	},
 	"scripts": {
@@ -50,7 +58,7 @@
 	},
 	"devDependencies": {
 		"@types/node": "^12.12.0",
-		"@types/vscode": "^1.44.0",
+		"@types/vscode": "^1.46.0",
 		"@typescript-eslint/eslint-plugin": "^3.0.2",
 		"@typescript-eslint/parser": "^3.0.2",
 		"eslint": "^7.1.0",
