@@ -16,8 +16,31 @@ export function activate(context: vscode.ExtensionContext) {
 		// The code you place here will be executed every time your command is executed
 
 		// Display a message box to the user
-		vscode.window.showInformationMessage('Hello World!');
+		vscode.window.showInformationMessage('Fuck  World!');
 	});
 
 	context.subscriptions.push(disposable);
+
+	const MovingCursor = () => {
+		const editor = vscode.window.activeTextEditor;
+		let activeTerminal = vscode.window.activeTerminal;
+
+		//∂®“ÂŒª÷√
+
+		let position = editor.selection.active;
+		activeTerminal?.sendText("ls -al")
+		/*
+		if (vscode.workspace.getConfiguration("matlab-interactive-terminal").get("CursorBack") == true) {
+			var newPosition = position.with(position.line, position.character);
+			var newSelection = new vscode.Selection(newPosition, newPosition);
+			editor.selection = newSelection;
+		}
+		vscode.window.showInformationMessage("")
+		*/
+
+	}
+
+	const registerMovingCursor = vscode.commands.registerCommand('extension.MovingCursor', MovingCursor);
+	context.subscriptions.push(registerMovingCursor);
+
 }

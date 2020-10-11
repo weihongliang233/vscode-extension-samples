@@ -12,7 +12,8 @@
 		"Other"
 	],
 	"activationEvents": [
-		"onCommand:extension.helloWorld"
+		"onCommand:extension.helloWorld",
+		"onCommand:extension.MovingCursor"
 	],
 	"main": "./out/extension.js",
 	"contributes": {
@@ -20,8 +21,21 @@
 			{
 				"command": "extension.helloWorld",
 				"title": "Hello World"
+			},
+			{
+				"command": "extension.MovingCursor",
+				"title": "Moving Cursors"
 			}
-		]
+		],
+	"configuration":{
+		"title": "Matlab-Interactive-Terminal-Settings",
+		"properties": {
+			"matlab-interactive-terminal.CursorBack":{
+				"default":"true",
+				"description": "Deciding whether to make the cursor fall back onto your editor when you excute the command 'Run Current Selection'"
+			}
+		}
+	}
 	},
 	"scripts": {
 		"vscode:prepublish": "npm run compile",
